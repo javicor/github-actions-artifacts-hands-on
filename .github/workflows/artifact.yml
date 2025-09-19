@@ -25,13 +25,15 @@ jobs:
     
     steps:
       - name: Check artifact
-        run: ls -lasa
+        run: ls -las
 
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
           path: ./artifacts/
+      - name: Check artifact2
+        run: ls -las
 
       - name: Display File
         run: cat ./artifacts/hello.txt
