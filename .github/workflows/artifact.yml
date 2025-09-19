@@ -24,12 +24,12 @@ jobs:
     needs: build
     
     steps:
-      - name: Download artifact
+      - name: Download text file step
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
           path: ./artifacts
 
-      - name: Display File
+      - name: Display content of the text file
         run: cat ./artifacts/hello.txt
 
