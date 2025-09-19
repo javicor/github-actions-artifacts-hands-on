@@ -24,10 +24,14 @@ jobs:
     needs: build
     
     steps:
+      - name: Check artifact
+        run: ls -lasa
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
+          path: ./artifacts/
 
       - name: Display File
         run: cat ./artifacts/hello.txt
